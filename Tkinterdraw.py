@@ -23,24 +23,25 @@ def clear():
     canvas.delete('all')
 
 def graphline():
-    xhs =  10         # x of horz starting point same
-    yhs =  10         # y of horz starting point 
+    xhs =  20         # x of horz starting point same
+    yhs =  20         # y of horz starting point 
     xhe = 440         # x of horz end point same
     yhe = 10  
     xvs = 10          # x of vert starting  point 
     yvs = 10          # y of vert starting point same
     xve = 10          # x of vert end point
     yve = 460
-    for i in range(18): # draws horizontal grid lines
+    for i in range(19): # draws horizontal grid lines
         canvas.create_line(xhs, yhs, xhe, yhe)
         yhs = yhs + 25
         yhe = yhe + 25
-    for i in range(18): # draws vert grid lines
+    for i in range(19): # draws vert grid lines
         canvas.create_line(xvs, yvs, xve, yve)
         xvs = xvs + 25
         xve = xve + 25
-    canvas.create_line(210, 20, 210, 460)
-    canvas.create_line(20, 210, 460, 212)
+    canvas.create_line(210, 10, 210, 470, width =3) # cross demarcation
+    canvas.create_line(10, 2, 460, 210, width=3) # cross demarcation 
+
 
 #def slope
 
