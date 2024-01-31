@@ -5,7 +5,11 @@ from turtle import ht
 
 
 #custom functions
+# shift center point rduce size 
+# add slope calculationm 
+# dots for marks markes for numbers 
 
+#y = mx + b                                                                                                                                                           
 
 def draw():
     x1 = int(txtX1.get())
@@ -65,6 +69,9 @@ canvas = tk.Canvas(window,  width=canvas_width, height=canvas_height, bg="white"
 
 
 #add GUI items to grid 
+btn.grid(row= 3, column= 3)
+btnClear.grid(row= 3, column= 4)
+canvas.grid(row=4, column= 0)
 lblev.grid(row=0, column = 0)
 lblrv.grid(row= 1, column = 0)
 lblX2.grid(row =2, column = 0)
@@ -73,9 +80,7 @@ txtX1.grid(row= 0, column = 1)
 txtY1.grid(row= 1, column = 1)
 txtX2.grid(row =2, column = 1)
 txtY2.grid(row= 3, column = 1)
-btn.grid(row= 3, column= 3)
-btnClear.grid(row= 3, column= 4)
-canvas.grid(row=4, column= 0)
+
 
 
 #build window
