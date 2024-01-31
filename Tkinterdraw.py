@@ -5,8 +5,10 @@ from turtle import ht
 
 
 #custom functions
-# shift center point rduce size 
+# shift center point rduce size o
 # add slope calculationm 
+# difine left and bottom as -
+# if x-(num) then put on left y-(num) put on bottom otherwise put r or t 10 to 440 = 420 210 each side
 # dots for marks markes for numbers 
 
 #y = mx + b                                                                                                                                                           
@@ -23,12 +25,12 @@ def clear():
 def graphline():
     xhs =  10         # x of horz starting point same
     yhs =  10         # y of horz starting point 
-    xhe = 435         # x of horz end point same
+    xhe = 440         # x of horz end point same
     yhe = 10  
     xvs = 10          # x of vert starting  point 
     yvs = 10          # y of vert starting point same
     xve = 10          # x of vert end point
-    yve = 435
+    yve = 460
     for i in range(18): # draws horizontal grid lines
         canvas.create_line(xhs, yhs, xhe, yhe)
         yhs = yhs + 25
@@ -37,11 +39,14 @@ def graphline():
         canvas.create_line(xvs, yvs, xve, yve)
         xvs = xvs + 25
         xve = xve + 25
-    canvas.create_line(212, 5, 212, 440)
-    canvas.create_line(5, 212, 440, 212)
-# canvas dimentions
-canvas_width = 450
-canvas_height = 450
+    canvas.create_line(210, 20, 210, 460)
+    canvas.create_line(20, 210, 460, 212)
+
+#def slope
+
+# canvas dimentions666
+canvas_width = 480
+canvas_height = 480
 
 #window properties
 window = tk.Tk()
