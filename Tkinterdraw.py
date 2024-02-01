@@ -19,9 +19,9 @@ def draw():
     y1 = int(txtY1.get())
     x2 = int(txtX2.get())
     y2 = int(txtY2.get())
-    canvas.create_line(x1,y1,x2,y2)
+    canvas.create_line(x1,y1,x2,y2, fill = "#009A44")
 def clear():
-    canvas.delete('draw')
+    canvas.delete('draw') #makes it so delete doesnt delete grid
 
 def graphline():
     xhs =  20         # x of horz starting point same
@@ -51,14 +51,15 @@ def graphline():
         vd = vd + 25
 """""
 if (-) :#places negaitive number
-20 + 25
+270 - 25* #number entered
 elif >0:  #places posiotive numbers if 
-270 + 25
+270 + 25* # number entered
 else: # places 0 at middle
     = 270
 """
-#def slope
-
+def slope():
+    sx = x2 - x1 
+    sy = y2 - y1 
 # canvas dimentions666
 canvas_width = 540
 canvas_height = 540
@@ -73,7 +74,7 @@ lblev = tk.Label( window, text = "X1: ")
 lblrv = tk.Label( window, text = "Y1: ")
 lblX2 = tk.Label( window, text = "X2: ")
 lblY2 = tk.Label( window, text = "Y2: ")
-
+lblslp = tk.Label(window, text = "Find slope", command= slope)
 
 #read textboxs
 txtX1 = tk.Entry(window)
