@@ -8,8 +8,8 @@ from turtle import ht
 # shift center point rduce size o
 # add slope calculationm 
 # difine left and bottom as -
-# if x =-(num) then put on left y =-(num) put on bottom otherwise put r or t 10 to 440 = 420 210 each side
-# break up grid to numbers 100 up by ten 500px wide each sopot 25 px
+# if x =-(num) then put on left y =-(num) put on bottom otherwise put r or t 10 to 440 = 420 210 each side figure out the convertion ratio 1 = 2.5 px
+# break up grid to numbers 100 up by ten 500px wide each sopot 25 px 
 # dots for marks markes for numbers 
 
 #y = mx + b                                                                                                                                                           
@@ -53,9 +53,9 @@ def graphline():
         vd = vd + 25
 """""
 if draw() == "-":#places negaitive number
-270 - 25* #number entered
-elif >0:  #places posiotive numbers if 
-270 + 25* # number entered
+= 270 - 2.5* #number entered
+elif draw() >0:  #places positive number
+= 270 + 2.5* # number entered
 else: # places 0 at middle
     = 270
 """
@@ -76,7 +76,7 @@ lblev = tk.Label( window, text = "X1: ")
 lblrv = tk.Label( window, text = "Y1: ")
 lblX2 = tk.Label( window, text = "X2: ")
 lblY2 = tk.Label( window, text = "Y2: ")
-
+lblslp = tk.Label( window, text = "")
 
 #read textboxs
 txtX1 = tk.Entry(window)
@@ -87,7 +87,7 @@ txtY2 = tk.Entry(window)
 #buttons
 btn = tk.Button(window, text="Draw!", command= draw)
 btnClear = tk.Button(window, text = "Clear", padx= 20, command=clear)
-lblslp = tk.Button(window, text = "Find slope")
+btnslp = tk.Button(window, text = "Find slope")
 #canvas
 canvas = tk.Canvas(window,  width=canvas_width, height=canvas_height, bg="white")
 
@@ -104,8 +104,8 @@ txtX1.grid(row= 0, column = 1)
 txtY1.grid(row= 1, column = 1)
 txtX2.grid(row= 2, column = 1)
 txtY2.grid(row= 3, column = 1)
-lblslp.grid(row= 5, column = 0)
-
+btnslp.grid(row= 5, column = 0)
+lblslp.grid(row= 6, column = 0)
 
 #build window
 graphline()
