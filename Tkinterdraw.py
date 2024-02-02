@@ -20,6 +20,8 @@ def draw():
     x2 = int(txtX2.get())
     y2 = int(txtY2.get())
     canvas.create_line(x1,y1,x2,y2, fill = "#009A44")
+
+    return x1
 def clear():
     canvas.delete('draw') #makes it so delete doesnt delete grid
 
@@ -28,7 +30,7 @@ def graphline():
     yhs =  20         # y of horz starting point 
     xhe = 520         # x of horz end point same
     yhe = 20 
-    xvs = 20        # x of vert starting  point 
+    xvs = 20          # x of vert starting  point 
     yvs = 20          # y of vert starting point same
     xve = 20          # x of vert end point
     yve = 520
@@ -50,7 +52,7 @@ def graphline():
         hd = hd + 25
         vd = vd + 25
 """""
-if (-) :#places negaitive number
+if draw() == "-":#places negaitive number
 270 - 25* #number entered
 elif >0:  #places posiotive numbers if 
 270 + 25* # number entered
@@ -74,7 +76,7 @@ lblev = tk.Label( window, text = "X1: ")
 lblrv = tk.Label( window, text = "Y1: ")
 lblX2 = tk.Label( window, text = "X2: ")
 lblY2 = tk.Label( window, text = "Y2: ")
-lblslp = tk.Label(window, text = "Find slope", command= slope)
+
 
 #read textboxs
 txtX1 = tk.Entry(window)
@@ -85,6 +87,7 @@ txtY2 = tk.Entry(window)
 #buttons
 btn = tk.Button(window, text="Draw!", command= draw)
 btnClear = tk.Button(window, text = "Clear", padx= 20, command=clear)
+lblslp = tk.Button(window, text = "Find slope")
 #canvas
 canvas = tk.Canvas(window,  width=canvas_width, height=canvas_height, bg="white")
 
@@ -92,16 +95,16 @@ canvas = tk.Canvas(window,  width=canvas_width, height=canvas_height, bg="white"
 #add GUI items to grid 
 btn.grid(row= 3, column= 3)
 btnClear.grid(row= 3, column= 4)
-canvas.grid(row=4, column= 0)
-lblev.grid(row=0, column = 0)
+canvas.grid(row= 4, column= 0)
+lblev.grid(row= 0, column = 0)
 lblrv.grid(row= 1, column = 0)
-lblX2.grid(row =2, column = 0)
+lblX2.grid(row= 2, column = 0)
 lblY2.grid(row= 3, column = 0)
 txtX1.grid(row= 0, column = 1)
 txtY1.grid(row= 1, column = 1)
-txtX2.grid(row =2, column = 1)
+txtX2.grid(row= 2, column = 1)
 txtY2.grid(row= 3, column = 1)
-
+lblslp.grid(row= 5, column = 0)
 
 
 #build window
