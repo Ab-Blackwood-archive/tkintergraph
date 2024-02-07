@@ -10,20 +10,36 @@ from turtle import ht
 # difine left and bottom as -
 # if x =-(num) then put on left y =-(num) put on bottom otherwise put r or t 10 to 440 = 420 210 each side figure out the convertion ratio 1 = 2.5 px
 # break up grid to numbers 100 up by ten 500px wide each sopot 25 px 
-# dots for marks markes for numbers 
+# dots for marks markes for numbers  
 
 #y = mx + b                                                                                                                                                           
 
+def position(point):
+    if point == "-":#places negaitive number side
+        point = 270 - 2.5*point #number entered use blank varianble that changes for each textbox
+    elif point > 0:  #places posi tive number
+        point = 270 + 2.5*point # number entered
+    else: # places 0 at middle
+        point= 270
+
 def draw():
     x1 = int(txtX1.get())
+    position(x1) # set point to x1
+    point =x1 # convert back to x1
     y1 = int(txtY1.get())
+    position(y1)
+    point =y1
     x2 = int(txtX2.get())
+    position(x2)
+    point = x2
     y2 = int(txtY2.get())
-    canvas.create_line(x1,y1,x2,y2, fill = "#009A44")
+    position(y2)
+    point = y2
+    drwline =canvas.create_line(x1,y1,x2,y2, fill = "#009A44")
 
     return x1
 def clear():
-    canvas.delete('draw') #makes it so delete doesnt delete grid
+    canvas.delete('drwline') #makes it so delete doesnt delete grid spesify lines
 
 def graphline():
     xhs =  20         # x of horz starting point same
@@ -52,9 +68,9 @@ def graphline():
         hd = hd + 25
         vd = vd + 25
 """""
-if draw() == "-":#places negaitive number
+if draw() == "-":#places negaitive number side
 = 270 - 2.5* #number entered
-elif draw() >0:  #places positive number
+elif draw() >0:  #places posi tive number
 = 270 + 2.5* # number entered
 else: # places 0 at middle
     = 270
