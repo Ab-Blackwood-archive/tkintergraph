@@ -13,76 +13,48 @@ from turtle import ht
 
 #y = mx + b                                                                                                                                                           
 
-def position(point):
-    if point == "-":#places negaitive number side
-        point = 270 - 2.5*point #number entered use blank varianble that changes for each textbox
-    elif point > 0:  #places posi tive number
-        point = 270 + 2.5*point # number entered
-    else: # places 0 at middle
-        point= 270
-
 def draw():
-    x1 = int(txtX1.get())
-    position(x1) # set point to x1
-    point = x1 # convert back to x1
-    y1 = int(txtY1.get())
-    position(y1)
-    point = y1
-    x2 = int(txtX2.get())
-    position(x2)
-    point = x2
-    y2 = int(txtY2.get())
-    position(y2)
-    point = y2
-    drwline = canvas.create_line(x1,y1,x2,y2, fill = "#009A44")
+    Itm1 = int(txti1.get()) * 2.5
+    point = Itm1
+    x1= 50
+    x2= x1 + 50
+    y1= 500
+    y2= 500 - point
+    canvas.create_rectangle(x1,y1,x2,y2)
+  
+    
+    Itm2 = int(txti2.get()) * 2.5
+    point = 500 - Itm2
+    x1= x2 + 50
+    x2= x1 + 50
+    y2= 500 - point
+    canvas.create_rectangle(x1,y1,x2,y2)
+    Itm3 = int(txti3.get()) * 2.5
+    point = 500 - Itm3
+    x1= x2 + 50
+    x2= x1 + 50
+    y2= 500 - point
+    canvas.create_rectangle(x1,y1,x2,y2)
+    Itm4 = int(txti4.get()) * 2.5
+    point = 500 - Itm4
+    x1= x2 + 100
+    x2= x1 + 50
+    y2= 500 - point
+    canvas.create_rectangle(x1,y1,x2,y2)
+   
 
-    return x1
-''''
-def clear():
-    canvas.delete(drwline) #makes it so delete doesnt delete grid spesify lines
-'
-
-def graphline():
-    xhs =  20         # x of horz starting point same
-    yhs =  20         # y of horz starting point 
-    xhe = 520         # x of horz end point same
-    yhe = 20 
-    xvs = 20          # x of vert starting  point 
-    yvs = 20          # y of vert starting point same
-    xve = 20          # x of vert end point
-    yve = 520
-    for i in range(21): # draws horizontal grid lines
-        canvas.create_line(xhs, yhs, xhe, yhe)
-        yhs = yhs + 25
-        yhe = yhe + 25
-    for i in range(21): # draws vert grid lines
-        canvas.create_line(xvs, yvs, xve, yve)
-        xvs = xvs + 25
-        xve = xve + 25
-    canvas.create_line(270, 10, 270, 530, width =3) # cross demarcation hoz
-    canvas.create_line(10, 270, 530, 270, width=3) # cross demarcation vert 
-    hd = 45
-    vd = 45
-    for i in range(19): #draws dashes 
-        canvas.create_line(hd,275,hd,265, width = 2) # hoz dash
-        canvas.create_line(275,vd,265,vd, width = 2) # vert dash
-        hd = hd + 25
-        vd = vd + 25
-'''''
 def graph():
-     hd = 45
-    vd = 45
+    vd = 500
     for i in range(19): #draws dashes 
-        canvas.create_line(hd,275,hd,265, width = 2) # hoz dash
-        canvas.create_line(275,vd,265,vd, width = 2) # vert dash
-        hd = hd + 25
-        vd = vd + 25
-    canvas.create_line(40, 500, 40, 50, width=2) # cross demarcation vert 
-    canvas.create_line(40, 500, 530, 500, width=2) # cross demarcation vert 
-    vd = 45
-    for i in range(19): #draws dashes 
-        canvas.create_line(275,vd,265,vd, width = 2) # vert dash  
-        vd = vd + 25
+        canvas.create_line(35,vd,40,vd, width = 2) # vert dash
+        vd = vd - 25
+    canvas.create_line(40, 500, 40, 50, width=2) # cross demarcation vert
+    canvas.create_line(40, 500, 530, 500, width=2) # cross demarcation hoz
+   # vd = 45
+   # for i in range(19): #draws dashes 
+  #      canvas.create_line(40,vd,40,vd, width = 2) # vert dash  
+  #      vd = vd + 25
+
 # canvas dimentions666
 canvas_width = 540
 canvas_height = 540
@@ -93,17 +65,17 @@ window.title("graphing with Tkinter")
 window.geometry("800x800") 
 
 #create lables
-lblev = tk.Label( window, text = "X1: ")
-lblrv = tk.Label( window, text = "Y1: ")
-lblX2 = tk.Label( window, text = "X2: ")
-lblY2 = tk.Label( window, text = "Y2: ")
+lbli1 = tk.Label( window, text = "item 1: ")
+lbli2 = tk.Label( window, text = "item 2: ")
+lbli3 = tk.Label( window, text = "item 3: ")
+lbli4 = tk.Label( window, text = "item 4: ")
 lblslp = tk.Label( window, text = "")
 
 #read textboxs
-txtX1 = tk.Entry(window)
-txtY1 = tk.Entry(window)
-txtX2 = tk.Entry(window)
-txtY2 = tk.Entry(window)
+txti1 = tk.Entry(window)
+txti2 = tk.Entry(window)
+txti3 = tk.Entry(window)
+txti4 = tk.Entry(window)
 
 #buttons
 btn = tk.Button(window, text="Draw!", command= draw)
@@ -117,14 +89,14 @@ canvas = tk.Canvas(window,  width=canvas_width, height=canvas_height, bg="white"
 btn.grid(row= 3, column= 3)
 #btnClear.grid(row= 3, column= 4)
 canvas.grid(row= 4, column= 0)
-lblev.grid(row= 0, column = 0)
-lblrv.grid(row= 1, column = 0)
-lblX2.grid(row= 2, column = 0)
-lblY2.grid(row= 3, column = 0)
-txtX1.grid(row= 0, column = 1)
-txtY1.grid(row= 1, column = 1)
-txtX2.grid(row= 2, column = 1)
-txtY2.grid(row= 3, column = 1)
+lbli1.grid(row= 0, column = 0)
+lbli2.grid(row= 1, column = 0)
+lbli3.grid(row= 2, column = 0)
+lbli4.grid(row= 3, column = 0)
+txti1.grid(row= 0, column = 1)
+txti2.grid(row= 1, column = 1)
+txti3.grid(row= 2, column = 1)
+txti4.grid(row= 3, column = 1)
 lblslp.grid(row= 6, column = 0)
 
 #build window
